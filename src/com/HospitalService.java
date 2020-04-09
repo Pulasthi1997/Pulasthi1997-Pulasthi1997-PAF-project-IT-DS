@@ -18,7 +18,7 @@ public class HospitalService {
 	   @Path("/")
 	@Produces(MediaType.TEXT_HTML)
 	 
-	   public String readItems()
+	   public String readHospital()
 	   {
 	   return h1.readHospital();
 	   }
@@ -26,7 +26,7 @@ public class HospitalService {
 	   @Path("/")
 	   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	   @Produces(MediaType.TEXT_PLAIN)
-	   public String insertItem(@FormParam("H_name") String H_Name,
+	   public String insertHospital(@FormParam("H_name") String H_Name,
 	    @FormParam("H_contactNumber") String H_Contact_Number,
 	    @FormParam("H_address") String H_address,
 	    @FormParam("H_email") String H_email
@@ -43,7 +43,7 @@ public class HospitalService {
 	   @Path("/")
 	   @Consumes(MediaType.APPLICATION_JSON)
 	   @Produces(MediaType.TEXT_PLAIN)
-	   public String updateItem(String dData)
+	   public String updateHopital(String dData)
 	   {
 	   
 	    JsonObject h2 = new JsonParser().parse(dData).getAsJsonObject();
@@ -61,12 +61,12 @@ public class HospitalService {
 	   @Path("/")
 	   @Consumes(MediaType.APPLICATION_XML)
 	   @Produces(MediaType.TEXT_PLAIN)
-	   public String deleteItem(String dData)
+	   public String deleteHospital(String dData)
 	   {
-	   //Convert the input string to an XML document
+	  
 	    Document doc = Jsoup.parse(dData, "", Parser.xmlParser());
 
-	   //Read the value from the element <itemID>
+	 
 	    String H_ID = doc.select("H_ID").text();
 	    String output = h1.deleteHospital(H_ID);
 	   return output;
