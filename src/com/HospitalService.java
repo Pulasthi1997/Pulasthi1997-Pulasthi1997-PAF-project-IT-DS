@@ -26,15 +26,12 @@ public class HospitalService {
 	   @Path("/")
 	   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	   @Produces(MediaType.TEXT_PLAIN)
-	   public String insertHospital(@FormParam("H_name") String H_Name,
+	   public String insertHospital(
+	    @FormParam("H_name") String H_Name,
 	    @FormParam("H_contactNumber") String H_Contact_Number,
 	    @FormParam("H_address") String H_address,
 	    @FormParam("H_email") String H_email
-	 
-	       )
-	   
-	   
-	   
+	 )
 	   {
 	    String output = h1.insertHospital(H_Name,H_Contact_Number ,H_address , H_email);
 	   return output;
