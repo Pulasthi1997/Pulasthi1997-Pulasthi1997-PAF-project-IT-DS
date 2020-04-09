@@ -105,6 +105,7 @@ public class Hospital {
 				if (con == null) {
 					return "Error while connecting to the database for updating.";
 				}
+				//update
 				// create a prepared statement
 				String query = "UPDATE hospital SET H_name=?,H_contactNumber=?,H_address=?,H_email=? WHERE H_ID=?";
 				PreparedStatement preparedStmt = con.prepareStatement(query);
