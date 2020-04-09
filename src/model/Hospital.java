@@ -31,7 +31,7 @@ public class Hospital {
 					return "Error while connecting to the database for inserting.";
 				}
 				// create a prepared statement
-				String query = " insert into items(`H_ID`,`H_name`,`H_contactNumber`,`H_address`,`H_email`)"
+				String query = " insert into hospital(`H_ID`,`H_name`,`H_contactNumber`,`H_address`,`H_email`)"
 						+ " values (?, ?, ?, ?, ?)";
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 				// binding values
