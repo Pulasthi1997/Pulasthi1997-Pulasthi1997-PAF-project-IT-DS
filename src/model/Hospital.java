@@ -146,7 +146,5 @@ public class Hospital {
 				System.err.println(e.getMessage());
 			}
 			return output;
-		}
-		
-		
+		}		
 }
