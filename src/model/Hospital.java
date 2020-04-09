@@ -23,7 +23,7 @@ public class Hospital {
 		 return con;
 		 } 
 		
-		public String insertItem(String hName, String contactNo, String address, String email) {
+		public String insertHospital(String hName, String contactNo, String address, String email) {
 			String output = "";
 			try {
 				Connection con = connect();
