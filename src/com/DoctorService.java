@@ -76,4 +76,15 @@ public class DoctorService
    return output;
    }
 
+	
+	
+	// A common method to connect to the DB
+	// A common method to connect to the DB
+	// A common method to connect to the DB
+	// A common method to connect to the DB
+	// A common method to connect to the DB
+	// A common method to connect to the DB
+	// A common method to connect to the DB
+	
+	
 }
