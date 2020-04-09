@@ -106,7 +106,7 @@ public class Hospital {
 					return "Error while connecting to the database for updating.";
 				}
 				// create a prepared statement
-				String query = "UPDATE hospital SET H_ID=?,H_name=?,H_contactNumber=?,H_address=?,H_email=? WHERE H_ID=?";
+				String query = "UPDATE hospital SET H_name=?,H_contactNumber=?,H_address=?,H_email=? WHERE H_ID=?";
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 				// binding values
 				preparedStmt.setString(1, hName);

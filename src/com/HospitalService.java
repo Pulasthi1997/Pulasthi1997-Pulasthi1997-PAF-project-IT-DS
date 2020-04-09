@@ -45,13 +45,13 @@ public class HospitalService {
 	   
 	    JsonObject h2 = new JsonParser().parse(dData).getAsJsonObject();
 	    String H_ID = h2.get("H_ID").getAsString();
-	    String H_Name = h2.get("H_Name").getAsString();
-	    String H_Contact_Number = h2.get("H_Contact_Number").getAsString();
+	    String H_Name = h2.get("H_name").getAsString();
+	    String H_contactNumber = h2.get("H_contactNumber").getAsString();
 	    String H_address = h2.get("H_address").getAsString();
 	    String H_email = h2.get("H_email").getAsString();
 	    
 	   
-	   String output = h1.updateHopital(H_ID, H_Name,H_Contact_Number,H_address,H_email);
+	   String output = h1.updateHopital(H_ID, H_Name,H_contactNumber,H_address,H_email);
 	   return output;
 	   }
 	   @DELETE
