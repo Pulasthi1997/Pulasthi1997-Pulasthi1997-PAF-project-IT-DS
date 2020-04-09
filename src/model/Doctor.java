@@ -41,6 +41,8 @@ public class Doctor { // A common method to connect to the DB
 			preparedStmt.setString(7, nic);
 
 //execute the statement
+//execute the statement			
+			
 			preparedStmt.execute();
 			con.close();
 			output = "Inserted successfully created ";
