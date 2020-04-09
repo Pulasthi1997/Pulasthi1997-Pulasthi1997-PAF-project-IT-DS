@@ -15,9 +15,7 @@ public class Doctor { // A common method to connect to the DB
 		}
 		return con;
 	}
-	
-	
-	
+
 	public String insertItem(String dname, String dtype, String contact, String address, String email, String nic) {
 		String output = "";
 		try {
@@ -27,7 +25,7 @@ public class Doctor { // A common method to connect to the DB
 			}
 // create a prepared statement
 			String query = " insert into doctor (`Doctor_ID`,`D_Name`,`D_Type`,`D_Contact_Number`,`D_Address`,`D_Email`,`D_NIC)"
-					+ " values (?, ?, ?, ?,?,?,?)";
+					+ " values (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 // binding values
 			preparedStmt.setInt(1, 0);
@@ -50,8 +48,6 @@ public class Doctor { // A common method to connect to the DB
 		return output;
 	}
 
-	
-	
 	public String readItems() {
 		String output = "";
 		try {
@@ -59,23 +55,30 @@ public class Doctor { // A common method to connect to the DB
 			if (con == null) {
 				return "Error while connecting to the database for reading.";
 			}
+
 // Prepare the html table to be displayed
 			output = "<table border=\"1\"><tr><th>Doctor Name</th><th>Doctor specification</th><th>"
 					+ "Contact Number</th><th>Doctor Address</th><th>Doctor Email </th><th>Doctor NIC</th><th>Update</th><th>Remove</th></tr>";
+
+			
 			String query = "select * from doctor";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
+
 // iterate through the rows in the result set
 			while (rs.next()) {
 				String Doctor_ID = Integer.toString(rs.getInt("Doctor_ID"));
 				String D_Name = rs.getString("D_Name");
 				String D_Type = rs.getString("D_Type");
+
 //String itemPrice = Double.toString(rs.getDouble("itemPrice"));
 				String D_Contact_Number = Integer.toString(rs.getInt("D_Contact_Number"));
 				String D_Address = rs.getString("D_Address");
 				String D_Email = rs.getString("D_Email");
 				String D_NIC = rs.getString("D_NIC");
 
+				
+				
 // Add into the html table
 				output += "<tr><td>" + D_Name + "</td>";
 				output += "<td>" + D_Type + "</td>";
@@ -89,7 +92,9 @@ public class Doctor { // A common method to connect to the DB
 						+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
 						+ "<input name=\"itemID\" type=\"hidden\" value=\"" + Doctor_ID + "\">" + "</form></td></tr>";
 			}
+			
 			con.close();
+			
 //Complete the html table
 			output += "</table>";
 		} catch (Exception e) {
@@ -99,8 +104,6 @@ public class Doctor { // A common method to connect to the DB
 		return output;
 	}
 
-	
-	
 	public String updateItem(String ID, String dname, String dtype, String contact, String address, String email,
 			String nic) {
 		String output = "";
@@ -132,8 +135,6 @@ public class Doctor { // A common method to connect to the DB
 		return output;
 	}
 
-	
-	
 	public String deleteItem(String Doctor_ID) {
 		String output = "";
 		try {
