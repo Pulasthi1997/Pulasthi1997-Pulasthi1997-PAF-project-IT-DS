@@ -63,19 +63,13 @@ public class HospitalService {
 	   @Produces(MediaType.TEXT_PLAIN)
 	   public String deleteHospital(String dData)
 	   {
-		 //Convert the input string to an XML document
+	  
 	    Document doc = Jsoup.parse(dData, "", Parser.xmlParser());
 
-	  //Read the value from the element <hospitalID>
+	 
 	    String H_ID = doc.select("H_ID").text();
 	    String output = h1.deleteHospital(H_ID);
 	   return output;
 	   }
-
-		
-		
-		
-	
-	
 
 }
