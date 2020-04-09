@@ -103,5 +103,37 @@ System.err.println(e.getMessage());
 }
 return output;
 } 
+public String updateItem(String ID,String dname, String dtype, String contact, String address,String email,String nic)
+{
+String output = "";
+try
+{
+Connection con = connect();
+if (con == null)
+{return "Error while connecting to the database for updating."; }
+// create a prepared statement
+String query = "UPDATE doctor SET D_Name=?,D_Type=?,D_Contact_Number=?,D_Address=?,D_Email=?,D_NIC=? WHERE Doctor_ID=?";
+PreparedStatement preparedStmt = con.prepareStatement(query);
+// binding values
+preparedStmt.setString(1, dname);
+preparedStmt.setString(2, dtype);
+//preparedStmt.setDouble(3, Double.parseDouble(price));
+preparedStmt.setInt(3,Integer.parseInt(contact));
+preparedStmt.setString(4, address);
+//preparedStmt.setInt(5, Integer.parseInt(ID));
+preparedStmt.setString(5, email);
+preparedStmt.setString(6, nic);
+// execute the statement
+preparedStmt.execute();
+con.close();
+output = "Updated successfully";
+}
+catch (Exception e)
+{
+output = "Error while updating the item.";
+System.err.println(e.getMessage());
+}
+return output;
+} 
 
 }
