@@ -67,8 +67,8 @@ public class HospitalService {
 	    Document doc = Jsoup.parse(dData, "", Parser.xmlParser());
 
 	   //Read the value from the element <itemID>
-	    String Doctor_ID = doc.select("Doctor_ID").text();
-	    String output = h1.deleteHospital(Doctor_ID);
+	    String H_ID = doc.select("H_ID").text();
+	    String output = h1.deleteHospital(H_ID);
 	   return output;
 	   }
 
