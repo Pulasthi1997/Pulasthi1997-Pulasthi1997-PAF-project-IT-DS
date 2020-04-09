@@ -17,7 +17,7 @@ public class DoctorService
    @Path("/")
 @Produces(MediaType.TEXT_HTML)
  
-   public String readItems()
+   public String readDoctors()
    {
    return d1.readDoctors();
    }
@@ -25,7 +25,7 @@ public class DoctorService
    @Path("/")
    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
    @Produces(MediaType.TEXT_PLAIN)
-   public String insertItem(@FormParam("D_Name") String D_Name,
+   public String insertDoctors(@FormParam("D_Name") String D_Name,
     @FormParam("D_Type") String D_Type,
     @FormParam("D_Contact_Number") String D_Contact_Number,
     @FormParam("D_Address") String D_Address,
@@ -43,7 +43,7 @@ public class DoctorService
    @Path("/")
    @Consumes(MediaType.APPLICATION_JSON)
    @Produces(MediaType.TEXT_PLAIN)
-   public String updateItem(String dData)
+   public String updateDoctors(String dData)
    {
    //Convert the input string to a JSON object
     JsonObject d12 = new JsonParser().parse(dData).getAsJsonObject();
@@ -65,7 +65,7 @@ public class DoctorService
    @Path("/")
    @Consumes(MediaType.APPLICATION_XML)
    @Produces(MediaType.TEXT_PLAIN)
-   public String deleteItem(String dData)
+   public String deleteDoctor(String dData)
    {
    //Convert the input string to an XML document
     Document doc = Jsoup.parse(dData, "", Parser.xmlParser());
