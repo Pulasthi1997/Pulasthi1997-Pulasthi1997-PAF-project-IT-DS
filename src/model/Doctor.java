@@ -23,7 +23,7 @@ try
 {
 Connection con = connect();
 if (con == null)
-{return "Error while connecting to the database for inserting."; }
+{return "Error while connecting to the database for inserting.."; }
 // create a prepared statement
 String query = " insert into doctor (`Doctor_ID`,`D_Name`,`D_Type`,`D_Contact_Number`,`D_Address`,`D_Email`,`D_NIC)"
 + " values (?, ?, ?, ?,?,?,?)";
