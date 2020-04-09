@@ -16,7 +16,7 @@ private Connection connect()
  {e.printStackTrace();}
  return con;
  } 
-public String insertItem(String dname, String dtype, String contact, String address,String email,String nic)
+public String insertDoctors(String dname, String dtype, String contact, String address,String email,String nic)
 {
 String output = "";
 try
@@ -51,7 +51,7 @@ System.err.println(e.getMessage());
 }
 return output;
 } 
-public String readItems()
+public String readDoctors()
 {
 String output = "";
 try
@@ -103,7 +103,7 @@ System.err.println(e.getMessage());
 }
 return output;
 } 
-public String updateItem(String ID,String dname, String dtype, String contact, String address,String email,String nic)
+public String updateDoctors(String ID,String dname, String dtype, String contact, String address,String email,String nic)
 {
 String output = "";
 try
@@ -135,7 +135,7 @@ System.err.println(e.getMessage());
 }
 return output;
 } 
-public String deleteItem(String Doctor_ID)
+public String deleteDoctor(String Doctor_ID)
 {
 String output = "";
 try

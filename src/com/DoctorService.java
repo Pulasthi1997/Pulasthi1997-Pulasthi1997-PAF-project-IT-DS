@@ -19,7 +19,7 @@ public class DoctorService
  
    public String readItems()
    {
-   return d1.readItems();
+   return d1.readDoctors();
    }
    @POST
    @Path("/")
@@ -36,7 +36,7 @@ public class DoctorService
    
    
    {
-    String output = d1.insertItem(D_Name,D_Type ,D_Contact_Number , D_Address,D_Email,D_NIC);
+    String output = d1.insertDoctors(D_Name,D_Type ,D_Contact_Number , D_Address,D_Email,D_NIC);
    return output;
    }
    @PUT
@@ -58,7 +58,7 @@ public class DoctorService
     
    // String output = d1.updateItem(Doctor_ID, D_Name,D_Type , D_Contact_Number,D_Address,D_Email,D_NIC );
    //return output;
-   String output = d1.updateItem(Doctor_ID, D_Name,D_Type , D_Contact_Number,D_Address,D_Email,D_NIC);
+   String output = d1.updateDoctors(Doctor_ID, D_Name,D_Type , D_Contact_Number,D_Address,D_Email,D_NIC);
    return output;
    }
    @DELETE
@@ -72,7 +72,7 @@ public class DoctorService
 
    //Read the value from the element <itemID>
     String Doctor_ID = doc.select("Doctor_ID").text();
-    String output = d1.deleteItem(Doctor_ID);
+    String output = d1.deleteDoctor(Doctor_ID);
    return output;
    }
 
