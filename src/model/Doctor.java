@@ -3,22 +3,21 @@ package model;
 import java.sql.*;
 
 public class Doctor { // A common method to connect to the DB
-	
+
 	private Connection connect() {
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			// Provide the correct details: DBServer/DBName, username, password
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_project?useTimezone=true&serverTimezone=UTC", "root", "");
+			con = DriverManager.getConnection(
+					"jdbc:mysql://127.0.0.1:3306/paf_project?useTimezone=true&serverTimezone=UTC", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return con;
 	}
 
-	
-	
 	public String insertDoctors(String dname, String dtype, String contact, String address, String email, String nic) {
 		String output = "";
 		try {
@@ -43,7 +42,7 @@ public class Doctor { // A common method to connect to the DB
 //execute the statement
 //execute the statement	
 //execute the statement	
-			
+
 			preparedStmt.execute();
 			con.close();
 			output = "Inserted successfully created ";
@@ -53,9 +52,6 @@ public class Doctor { // A common method to connect to the DB
 		}
 		return output;
 	}
-	
-	
-	
 
 	public String readDoctors() {
 		String output = "";
@@ -82,8 +78,7 @@ public class Doctor { // A common method to connect to the DB
 				String D_NIC = rs.getString("D_NIC");
 
 // Add into the html table
-				
-				
+
 				output += "<tr><td>" + D_Name + "</td>";
 				output += "<td>" + D_Type + "</td>";
 				output += "<td>" + D_Contact_Number + "</td>";
@@ -106,9 +101,6 @@ public class Doctor { // A common method to connect to the DB
 		return output;
 	}
 
-	
-	
-	
 	public String updateDoctors(String ID, String dname, String dtype, String contact, String address, String email,
 			String nic) {
 		String output = "";
@@ -129,7 +121,8 @@ public class Doctor { // A common method to connect to the DB
 //preparedStmt.setInt(5, Integer.parseInt(ID));
 			preparedStmt.setString(5, email);
 			preparedStmt.setString(6, nic);
-// execute the statement
+			preparedStmt.setInt(7, Integer.parseInt(ID));
+			// execute the statement
 			preparedStmt.execute();
 			con.close();
 			output = "Updated successfully";
@@ -141,8 +134,6 @@ public class Doctor { // A common method to connect to the DB
 	}
 
 	
-	
-	
 	public String deleteDoctor(String Doctor_ID) {
 		String output = "";
 		try {
@@ -151,7 +142,7 @@ public class Doctor { // A common method to connect to the DB
 				return "Error while connecting to the database for deleting.";
 			}
 // create a prepared statement
-			String query = "delete from items where itemID=?";
+			String query = "delete from doctor where Doctor_ID=?";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 // binding values
 			preparedStmt.setInt(1, Integer.parseInt(Doctor_ID));
