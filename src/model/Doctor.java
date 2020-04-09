@@ -42,7 +42,7 @@ preparedStmt.setString(7, nic);
 //execute the statement
 preparedStmt.execute();
 con.close();
-output = "Inserted successfully created ok";
+output = "Inserted successfully created ";
 }
 catch (Exception e)
 {
