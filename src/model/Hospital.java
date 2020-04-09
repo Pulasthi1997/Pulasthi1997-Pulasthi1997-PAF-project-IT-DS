@@ -16,7 +16,7 @@ public class Hospital {
 		 Class.forName("com.mysql.jdbc.Driver");
 
 		 //Provide the correct details: DBServer/DBName, username, password
-		 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/PAF_Project", "root", "");
+		 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_project", "root", "");
 		 }
 		 catch (Exception e)
 		 {e.printStackTrace();}
@@ -60,7 +60,7 @@ public class Hospital {
 					return "Error while connecting to the database for reading.";
 				}
 				// Prepare the html table to be displayed
-				output = "<table border=\"1\"><tr><th>Hospital ID</th>"
+				output = "<table border=\"1\">"
 						+ "<th>Hospital Name</th"
 						+ "><th>Contatct No</th>"
 						+ "<th>Address</th>"
