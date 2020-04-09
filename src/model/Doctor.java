@@ -82,6 +82,8 @@ public class Doctor { // A common method to connect to the DB
 				String D_NIC = rs.getString("D_NIC");
 
 // Add into the html table
+				
+				
 				output += "<tr><td>" + D_Name + "</td>";
 				output += "<td>" + D_Type + "</td>";
 				output += "<td>" + D_Contact_Number + "</td>";
