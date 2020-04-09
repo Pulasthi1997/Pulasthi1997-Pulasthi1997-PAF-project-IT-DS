@@ -135,5 +135,30 @@ System.err.println(e.getMessage());
 }
 return output;
 } 
+public String deleteItem(String Doctor_ID)
+{
+String output = "";
+try
+{
+Connection con = connect();
+if (con == null)
+{return "Error while connecting to the database for deleting."; }
+// create a prepared statement
+String query = "delete from items where itemID=?";
+PreparedStatement preparedStmt = con.prepareStatement(query);
+// binding values
+preparedStmt.setInt(1, Integer.parseInt(Doctor_ID));
+// execute the statement
+preparedStmt.execute();
+con.close();
+output = "Deleted successfully";
+}
+catch (Exception e)
+{
+output = "Error while deleting the item.";
+System.err.println(e.getMessage());
+}
+return output;
+} 
 
 }
