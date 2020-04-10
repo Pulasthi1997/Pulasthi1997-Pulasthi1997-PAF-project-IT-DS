@@ -42,6 +42,7 @@ public class Hospital {
 				preparedStmt.setString(5, email);
 
 				// execute the statement
+				//qwqw
 				preparedStmt.execute();
 				con.close();
 				output = "Inserted successfully";
