@@ -12,14 +12,14 @@ $(document).on("click", "#btnSave", function(event) {
 	$("#alertError").text("");
 	$("#alertError").hide();
 	// Form validation-------------------
-	var status = validateItemForm();
+	var status = validateHospitalForm();
 	if (status != true) {
 		$("#alertError").text(status);
 		$("#alertError").show();
 		return;
 	}
 	// If valid------------------------
-	$("#formItem").submit();
+	$("#formHospital").submit();
 });
 // UPDATE==========================================
 $(document).on(
@@ -35,7 +35,7 @@ $(document).on(
 			$("#H_email").val($(this).closest("tr").find('td:eq(3)').text());
 		});
 // CLIENTMODEL=========================================================================
-function validateItemForm() {
+function validateHospitalForm() {
 	// CODE
 	if ($("#H_name").val().trim() == "") {
 		return "Insert Hospital name.";
