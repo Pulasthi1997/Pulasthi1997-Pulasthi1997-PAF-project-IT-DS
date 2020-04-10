@@ -18,7 +18,7 @@
 		} else//Update----------------------
 		{
 			stsMsg = Hospital_1
-					.updateHopital(request.getParameter("hidHospitalIDSave"),
+					.updateHopital(request.getParameter("hidHospitalIDUpdate"),
 							request.getParameter("H_name"), request
 									.getParameter("H_contactNumber"), request
 									.getParameter("H_address"), request
@@ -45,6 +45,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src=".js"></script>
 </head>
 <body>
 	<form id="formHospital" name="formHospital" method="post" action="Hospital_Insert.jsp">
@@ -65,6 +66,14 @@
 		<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
 		
 	</form>
+	
+	<div id"alertSuccess" class="alert alert-success">
+		<%
+		out.print(session.getAttribute("statusMsg"));
+		%>
+		
+		</div>
+	
 	<%
 	 Hospital h1= new Hospital();
 	out.print(h1.readHospital());
