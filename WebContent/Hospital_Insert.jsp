@@ -1,5 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="model.Hospital" %>
+    
+    
+<%	
+	if (request.getParameter("H_name") != null) {
+		Hospital Hospital_1 = new Hospital();
+		String
+		stsMsg = "";
+		//Insert--------------------------
+		if (request.getParameter("hidHospitalIDSave") == "") {
+			stsMsg = Hospital_1.insertHospital(request.getParameter("H_name"),
+					request.getParameter("H_contactNumber"), request
+							.getParameter("H_address"), request
+							.getParameter("H_email"));
+		} else//Update----------------------
+		{
+			stsMsg = Hospital_1
+					.updateHopital(request.getParameter("hidHospitalIDSave"),
+							request.getParameter("H_name"), request
+									.getParameter("H_contactNumber"), request
+									.getParameter("H_address"), request
+									.getParameter("H_email"));
+		}
+		session.setAttribute("statusMsg", stsMsg);
+	}
+	//Delete-----------------------------
+	if (request.getParameter("hidHospitalIDDelete") != null) {
+		Hospital
+		Hospital_1 = new Hospital();
+		String
+		stsMsg = Hospital_1.deleteHospital(request
+				.getParameter("hidHospitalIDDelete"));
+		session.setAttribute("statusMsg", stsMsg);
+	}
+%>	
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +43,7 @@
 <title>Hospital_Insert</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Components/jquery-3.4.1.min.js"></script>
-<script src="/Components/Hospital.js"></script>
+<script src="Components/Hospital.js"></script>
 </head>
 <body>
 	<form id="formHospital" name="formHospital" method="post" action="Hospital_Insert.jsp">
@@ -28,42 +64,10 @@
 		<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
 		
 	</form>
-	
-<script type="text/javascript">	
-	
-	if (request.getParameter("H_name") != null) {
-		Hospital
-		Hospital_1 = new Hospital();
-		String
-		stsMsg = "";
-		//Insert--------------------------
-		if (request.getParameter("hidHospitalIDSave") == "") {
-			stsMsg = Hospital_1.insertHospital(request.getParameter("H_name"),
-					request.getParameter("H_contactNumber"), request
-							.getParameter("H_address"), request
-							.getParameter("H_email"));
-		} else//Update----------------------
-		{
-			stsMsg = Hospital_1
-					.updateHospital(request.getParameter("hidHospitalIDSave"),
-							request.getParameter("H_name"), request
-									.getParameter("H_contactNumber"), request
-									.getParameter("H_address"), request
-									.getParameter("H_email"));
-		}
-		session.setAttribute("statusMsg", stsMsg);
-	}
-	//Delete-----------------------------
-	if (request.getParameter("hidHospitalIDDelete") != null) {
-		Hospital
-		Hospital_1 = new Hospital();
-		String
-		stsMsg = Hospital_1.deleteHospital(request
-				.getParameter("hidHospitalIDDelete"));
-		session.setAttribute("statusMsg", stsMsg);
-	}
-</script>	
-	
-	
+	<%
+	 Hospital h1= new Hospital();
+	out.print(h1.readHospital());
+	%>
+		
 </body>
 </html>
