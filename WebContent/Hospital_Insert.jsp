@@ -26,6 +26,7 @@
 		
 	</form>
 	
+<script type="text/javascript">	
 	if (request.getParameter("H_name") != null)
 {
  Hospital Hospital_1 = new Hospital();
@@ -56,7 +57,7 @@ if (request.getParameter("hidHospitalIDDelete") != null)
  Hospital_1.deleteHospital(request.getParameter("hidHospitalIDDelete"));
  session.setAttribute("statusMsg", stsMsg);
 }
-	
+</script>	
 	
 	
 </body>
