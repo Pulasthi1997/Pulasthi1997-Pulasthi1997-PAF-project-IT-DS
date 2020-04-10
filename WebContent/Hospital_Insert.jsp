@@ -22,7 +22,9 @@
 			class="form-control form-control-sm"> <br> 
 		<input id="btnSave" name="btnSave" type="button" value="Save"
 			class="btn btn-primary"> 
-		<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
+		<input type="hidden" id="hidhospitalIDSave" name="hidhospitalIDSave" value="">
+		
 	</form>
+	
 </body>
 </html>
