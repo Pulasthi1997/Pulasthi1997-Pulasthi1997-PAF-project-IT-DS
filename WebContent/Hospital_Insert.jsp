@@ -26,37 +26,40 @@
 		
 	</form>
 	
-	if (request.getParameter("H_name") != null)
-{
- Hospital Hospital_1 = new Hospital();
- String stsMsg = "";
-//Insert--------------------------
-if (request.getParameter("hidHospitalIDSave") == "")
- {
- stsMsg = Hospital_1.insertHospital(request.getParameter("H_name"),
- request.getParameter("H_contactNumber"),
- request.getParameter("H_address"),
- request.getParameter("H_email"));
- }
-else//Update----------------------
- {
- stsMsg = Hospital_1.updateHospital(request.getParameter("hidHospitalIDSave"),
- request.getParameter("H_name"),
- request.getParameter("H_contactNumber"),
- request.getParameter("H_address"),
- request.getParameter("H_email"));
- }
- session.setAttribute("statusMsg", stsMsg);
-}
-//Delete-----------------------------
-if (request.getParameter("hidHospitalIDDelete") != null)
-{
- Hospital Hospital_1 = new Hospital();
- String stsMsg =
- Hospital_1.deleteHospital(request.getParameter("hidHospitalIDDelete"));
- session.setAttribute("statusMsg", stsMsg);
-}
+<script type="text/javascript">	
 	
+	if (request.getParameter("H_name") != null) {
+		Hospital
+		Hospital_1 = new Hospital();
+		String
+		stsMsg = "";
+		//Insert--------------------------
+		if (request.getParameter("hidHospitalIDSave") == "") {
+			stsMsg = Hospital_1.insertHospital(request.getParameter("H_name"),
+					request.getParameter("H_contactNumber"), request
+							.getParameter("H_address"), request
+							.getParameter("H_email"));
+		} else//Update----------------------
+		{
+			stsMsg = Hospital_1
+					.updateHospital(request.getParameter("hidHospitalIDSave"),
+							request.getParameter("H_name"), request
+									.getParameter("H_contactNumber"), request
+									.getParameter("H_address"), request
+									.getParameter("H_email"));
+		}
+		session.setAttribute("statusMsg", stsMsg);
+	}
+	//Delete-----------------------------
+	if (request.getParameter("hidHospitalIDDelete") != null) {
+		Hospital
+		Hospital_1 = new Hospital();
+		String
+		stsMsg = Hospital_1.deleteHospital(request
+				.getParameter("hidHospitalIDDelete"));
+		session.setAttribute("statusMsg", stsMsg);
+	}
+</script>	
 	
 	
 </body>
