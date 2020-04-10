@@ -17,8 +17,7 @@
 							.getParameter("H_email"));
 		} else//Update----------------------
 		{
-			stsMsg = Hospital_1
-					.updateHopital(request.getParameter("hidHospitalIDUpdate"),
+			stsMsg = Hospital_1.updateHopital(request.getParameter("hidHospitalIDSave"),
 							request.getParameter("H_name"), request
 									.getParameter("H_contactNumber"), request
 									.getParameter("H_address"), request
