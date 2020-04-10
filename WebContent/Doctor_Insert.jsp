@@ -30,7 +30,7 @@
 			}
 			session.setAttribute("statusMsg", stsMsg);
 		}
-		//Delete-----------------------------
+		//Delete-------------------------------------------
 		if (request.getParameter("hidDoctorIDDelete") != null) {
 			Doctor
 			d1 = new Doctor();
