@@ -13,17 +13,20 @@ public class Hospital {
 		 Connection con = null;
 		 try
 		 {
-		 Class.forName("com.mysql.jdbc.Driver");
+		 Class.forName("com.mysql.cj.jdbc.Driver");
          //Connection//good
 		 //Provide the correct details: DBServer/DBName, username, password
 		 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_project?useTimezone=true&serverTimezone=UTC", "root", "");
 		 }
 		 catch (Exception e)
-		 {e.printStackTrace();}
+		 {
+			 System.out.println("errrrror - "+e);
+			 e.printStackTrace();}
 		 return con;
 		 } 
 		
 		public String insertHospital(String hName, String contactNo, String address, String email) {
+			
 			String output = "";
 			try {
 				Connection con = connect();
@@ -31,23 +34,25 @@ public class Hospital {
 					return "Error while connecting to the database for inserting.";
 				}
 				// create a prepared statement
-				String query = " insert into hospital(`H_ID`,`H_name`,`H_contactNumber`,`H_address`,`H_email`)"
-						+ " values (?, ?, ?, ?, ?)";
+				String query = " insert into hospital(`H_name`,`H_contactNumber`,`H_address`,`H_email`)"
+						+ " values (?, ?, ?, ?)";
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 				// binding values
-				preparedStmt.setInt(1, 0);
-				preparedStmt.setString(2, hName);
-				preparedStmt.setString(3, contactNo);
-				preparedStmt.setString(4, address);
-				preparedStmt.setString(5, email);
+				//preparedStmt.setInt(1, );
+				preparedStmt.setString(1, hName);
+				preparedStmt.setString(2, contactNo);
+				preparedStmt.setString(3, address);
+				preparedStmt.setString(4, email);
 
 				// execute the statement
 				//qwqw
 				preparedStmt.execute();
 				con.close();
 				output = "Inserted successfully";
+				System.out.println("Inserted successfully.......................................");
 			} catch (Exception e) {
 				output = "Error while inserting the Hospitals.";
+				System.out.println("Error while inserting the Hospitals........."+ e);
 				System.err.println(e.getMessage());
 			}
 			return output;
@@ -79,12 +84,14 @@ public class Hospital {
 					String H_address = rs.getString("H_address");
 					String H_email = rs.getString("H_email");
 					
-					output += "<tr><td><input id=\"hidHospitalIDUpdate\"name=\"hidHospitalIDUpdate\"type=\"hidden\" value=\"" + H_ID +  "</td>";
+					
 					// Add into the html table
-					output += "<tr><td>" + H_name + "</td>";
+					output += "<tr><td><input id=\"hidHospitalIDUpdate\"name=\"hidHospitalIDUpdate\"type=\"hidden\" value=\"" + H_ID + "\">"
+                            + H_name + "</td>";
 					output += "<td>" + H_contactNumber + "</td>";
 					output += "<td>" + H_address + "</td>";
 					output += "<td>" + H_email + "</td>";
+					
 					// buttons
 					output += "<tr><td><input  name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
 							+ "<td><form method=\"post\" action=\"Hospital_Insert.jsp\">"
