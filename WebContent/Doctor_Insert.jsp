@@ -33,6 +33,41 @@ class="form-control form-control-sm">
  class="btn btn-primary">
 <input type="hidden" id="hidDoctorIDSave" name="hidDoctorIDSave" value="">
 </form>
+//Save---------------------------------
+if (request.getParameter("D_Name") != null)
+{
+ Doctor d1 = new Doctor();
+ String stsMsg = "";
+//Insert--------------------------
+if (request.getParameter("hidDoctorIDSave") == "")
+ {
+ stsMsg = d1.insertDoctors(request.getParameter("D_Name"),
+ request.getParameter("D_Type"),
+ request.getParameter("D_Contact_Number"),
+ request.getParameter("D_Address"),
+ request.getParameter("D_Email"),
+ request.getParameter("D_NIC"));
+ }
+else//Update----------------------
+ {
+ stsMsg = d1.updateDoctors(request.getParameter("hidDoctorIDSave"),
+ request.getParameter("D_Type"),
+ request.getParameter("D_Contact_Number"),
+ request.getParameter("D_Address"),
+ request.getParameter("D_Email"),
+ request.getParameter("D_NIC"));
+ }
+ session.setAttribute("statusMsg", stsMsg);
+}
+//Delete-----------------------------
+if (request.getParameter("hidDoctorIDDelete") != null)
+{
+ Doctor d1 = new Doctor();
+ String stsMsg =
+ d1.deleteDoctor(request.getParameter("hidDoctorIDDelete"));
+ session.setAttribute("statusMsg", stsMsg);
+}
+
 
 
 </body>

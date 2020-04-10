@@ -87,7 +87,7 @@ public class Doctor { // A common method to connect to the DB
 				output += "<td>" + D_NIC + "</td>";
 // buttons
 				output += "<td><input name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
-						+ "<td><form method=\"post\" action=\"DoctorInsert.jsp\">"
+						+ "<td><form method=\"post\" action=\"Doctor_Insert.jsp\">"
 						+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
 						+ "<input name=\"hidDoctorIDDelete\" type=\"hidden\" value=\"" + Doctor_ID + "\">" + "</form></td></tr>";
 			}
