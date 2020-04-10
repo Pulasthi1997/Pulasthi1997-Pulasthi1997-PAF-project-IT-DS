@@ -5,6 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hospital_Insert</title>
+<link rel="stylesheet" href="Views/bootstrap.min.css">
+<script src="Components/jquery-3.4.1.min.js"></script>
+<script src="Components/Hospital.js"></script>
 </head>
 <body>
 	<form id="formHospital" name="formHospital" method="post" action="Hospital_Insert.jsp">
