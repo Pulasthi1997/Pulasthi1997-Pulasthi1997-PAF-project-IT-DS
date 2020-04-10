@@ -65,7 +65,7 @@
 			class="form-control form-control-sm"> <br> NIC: <input
 			id="D_NIC" name="D_NIC" type="text"
 			class="form-control form-control-sm"> <br> <input
-			id="btnSave" name="btnSave" type="button" value="Save"
+			id="btnSave" name="btnSave" type="submit" value="Save"
 			class="btn btn-primary"> <input type="hidden"
 			id="hidDoctorIDSave" name="hidDoctorIDSave" value="">
 	</form>

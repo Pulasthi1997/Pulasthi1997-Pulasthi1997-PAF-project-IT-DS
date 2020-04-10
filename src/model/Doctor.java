@@ -26,18 +26,18 @@ public class Doctor { // A common method to connect to the DB
 				return "Error while connecting to the database for inserting..";
 			}
 // create a prepared statement
-			String query = " insert into doctor (`Doctor_ID`,`D_Name`,`D_Type`,`D_Contact_Number`,`D_Address`,`D_Email`,`D_NIC`)"
-					+ " values (?, ?, ?, ?,?,?,?)";
+			String query = " insert into doctor (`D_Name`,`D_Type`,`D_Contact_Number`,`D_Address`,`D_Email`,`D_NIC`)"
+					+ " values ( ?, ?, ?,?,?,?)";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 // binding values
-			preparedStmt.setInt(1, 0);
-			preparedStmt.setString(2, dname);
-			preparedStmt.setString(3, dtype);
+			//preparedStmt.setInt(1, 0);
+			preparedStmt.setString(1, dname);
+			preparedStmt.setString(2, dtype);
 //preparedStmt.setDouble(4, Double.parseDouble(price));
-			preparedStmt.setInt(4, Integer.parseInt(contact));
-			preparedStmt.setString(5, address);
-			preparedStmt.setString(6, email);
-			preparedStmt.setString(7, nic);
+			preparedStmt.setInt(3, Integer.parseInt(contact));
+			preparedStmt.setString(4, address);
+			preparedStmt.setString(5, email);
+			preparedStmt.setString(6, nic);
 
 //execute the statement
 //execute the statement	
