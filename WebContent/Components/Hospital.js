@@ -22,10 +22,7 @@ $(document).on("click", "#btnSave", function(event) {
 	$("#formHospital").submit();
 });
 // UPDATE==========================================
-$(document).on(
-		"click",
-		".btnUpdate",
-		function(event) {
+$(document).on("click",".btnUpdate",function(event) {
 			$("#hidHospitalIDSave").val($(this).closest("tr").find('#hidHospitalIDUpdate').val());
 			$("#H_name").val($(this).closest("tr").find('td:eq(0)').text());
 			$("#H_contactNumber").val($(this).closest("tr").find('td:eq(1)').text());
