@@ -110,7 +110,7 @@ public class Hospital {
 		}
 		
 		public String updateHopital(String ID, String hName, String contactNo, String address, String email) {
-			System.out.println("Update method.........................................................................");
+			System.out.println("Update method...............................................................................");
 			String output = "";
 			try {
 				Connection con = connect();

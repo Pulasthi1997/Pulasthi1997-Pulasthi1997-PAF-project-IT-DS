@@ -64,7 +64,6 @@
 		<input id="btnSave" name="btnSave" type="submit" value="Save"
 			class="btn btn-primary"> 
 		<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
-		
 	</form>
 	
 	<div id"alertSuccess" class="alert alert-success">
