@@ -77,18 +77,15 @@ public class Hospital {
 					String H_contactNumber = rs.getString("H_contactNumber");
 					String H_address = rs.getString("H_address");
 					String H_email = rs.getString("H_email");
-					// Add into the html table
 					
-			//		output += "<tr><td><input id=\"hidhospitalIDUpdate\"
-			//				 name=\"hidhospitalIDUpdate\"//
-				//			 type=\"hidden\" value=\"" + H_ID + "\">"
+					output += "<tr><td><input id=\"hidHospitalIDUpdate\"name=\"hidHospitalIDUpdate\"type=\"hidden\" value=\"" + H_ID +  "</td>";
+					// Add into the html table
 					output += "<tr><td>" + H_name + "</td>";
 					output += "<td>" + H_contactNumber + "</td>";
 					output += "<td>" + H_address + "</td>";
 					output += "<td>" + H_email + "</td>";
 					// buttons
-					
-					output += "<td><input name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
+					output += "<tr><td><input  name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
 							+ "<td><form method=\"post\" action=\"hospital.jsp\">"
 							+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
 							+ "<input name=\"H_ID\" type=\"hidden\" value=\"" + H_ID + "\">" + "</form></td></tr>";
