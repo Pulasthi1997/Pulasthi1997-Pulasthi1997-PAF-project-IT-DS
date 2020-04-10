@@ -89,6 +89,7 @@ public class Hospital {
 							+ "<td><form method=\"post\" action=\"hospital.jsp\">"
 							+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
 							+ "<input name=\"H_ID\" type=\"hidden\" value=\"" + H_ID + "\">" + "</form></td></tr>";
+					//1233
 				}
 				con.close();
 				// Complete the html table
