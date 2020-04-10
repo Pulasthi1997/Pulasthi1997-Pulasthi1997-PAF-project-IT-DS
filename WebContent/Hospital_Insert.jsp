@@ -8,6 +8,7 @@
 		Hospital Hospital_1 = new Hospital();
 		String
 		stsMsg = "";
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		//Insert--------------------------
 		if (request.getParameter("hidHospitalIDSave") == "") {
 			stsMsg = Hospital_1.insertHospital(request.getParameter("H_name"),
@@ -41,9 +42,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hospital_Insert</title>
-<link rel="stylesheet" href="Views/bootstrap.min.css">
-<script src="Components/jquery-3.4.1.min.js"></script>
-<script src="Components/Hospital.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<form id="formHospital" name="formHospital" method="post" action="Hospital_Insert.jsp">

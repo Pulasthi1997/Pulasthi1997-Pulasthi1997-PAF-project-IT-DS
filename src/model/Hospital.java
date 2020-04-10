@@ -93,7 +93,7 @@ public class Hospital {
 					output += "<td>" + H_email + "</td>";
 					
 					// buttons
-					output += "<tr><td><input  name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
+					output += "<tr><td><input  name=\"btnUpdate\" type=\"submit\"value=\"Update\" class=\"btn btn-secondary\"></td>"
 							+ "<td><form method=\"post\" action=\"Hospital_Insert.jsp\">"
 							+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
 							+ "<input name=\"hidHospitalIDDelete\" type=\"hidden\" value=\"" + H_ID + "\">" + "</form></td></tr>";
@@ -110,6 +110,7 @@ public class Hospital {
 		}
 		
 		public String updateHopital(String ID, String hName, String contactNo, String address, String email) {
+			System.out.println("Update method.........................................................................");
 			String output = "";
 			try {
 				Connection con = connect();
