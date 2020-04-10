@@ -47,7 +47,7 @@ function validateHospitalForm() {
 	// PRICE-------------------------------
 
 	if ($("#H_address").val().trim() == "") {
-		return "Insert Hospityal Address.";
+		return "Insert Hospital Address.";
 	}
 	// is numerical value
 	var tmpaddress = $("#H_address").val().trim();
