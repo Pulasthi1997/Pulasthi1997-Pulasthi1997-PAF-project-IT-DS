@@ -44,14 +44,7 @@ function validateHospitalForm() {
 	if ($("#H_address").val().trim() == "") {
 		return "Insert Hospital Address.";
 	}
-	// is numerical value
-	var tmpaddress = $("#H_address").val().trim();
-	if (!$.isNumeric(tmpaddress)) {
-		return "Insert Full length Hospital email.";
-	}
-	// convert to decimal price
-	$("#H_address").val(parseFloat(tmpaddress).toFixed(2));
-	// DESCRIPTION------------------------
+	
 	if ($("#H_email").val().trim() == "") {
 		return "Insert Hospital email.";
 	}
