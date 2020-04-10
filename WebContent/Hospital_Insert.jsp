@@ -65,7 +65,7 @@
 			class="btn btn-primary"> 
 		<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
 	</form>
-	//new
+	
 	<div id"alertSuccess" class="alert alert-success">
 		<%
 		out.print(session.getAttribute("statusMsg"));
