@@ -89,7 +89,7 @@ public class Hospital {
 					output += "<tr><td><input  name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
 							+ "<td><form method=\"post\" action=\"hospital.jsp\">"
 							+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
-							+ "<input name=\"H_ID\" type=\"hidden\" value=\"" + H_ID + "\">" + "</form></td></tr>";
+							+ "<input name=\"hidHospitalIDDelete\" type=\"hidden\" value=\"" + H_ID + "\">" + "</form></td></tr>";
 					//1233
 				}
 				con.close();
