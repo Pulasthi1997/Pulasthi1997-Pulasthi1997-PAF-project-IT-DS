@@ -52,7 +52,7 @@
 		<input id="H_name" name="H_name" type="text"
 			class="form-control form-control-sm" required> <br>
 	    Contact No:
-	     <input id="H_contactNumber" name="H_contactNumber" type="text" placeholder="07xxxxxxxx" maxlength="10"
+	     <input id="H_contactNumber" name="H_contactNumber" type="text" placeholder="0xxxxxxxxx" maxlength="10"
 			 pattern="^\d{10}$" class="form-control form-control-sm"required > <br> 
 			
 			
