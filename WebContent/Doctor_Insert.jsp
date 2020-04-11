@@ -63,8 +63,8 @@
 			class="form-control form-control-sm" required> <br> 
 			
 		Contact	Number: <input id="D_Contact_Number" name="D_Contact_Number"
-			type="text"   placeholder="7xxxxxxxx" maxlength="9"
-			 pattern="^\d{9}$"  class="form-control form-control-sm" required> <br>
+			type="text"   placeholder="0xxxxxxxxx" maxlength="10"
+			 pattern="^\d{10}$"  class="form-control form-control-sm" required> <br>
 			
 		Address: <input id="D_Address" name="D_Address" type="text"
 			class="form-control form-control-sm" required> <br> 
