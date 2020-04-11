@@ -66,7 +66,7 @@ if ($("#D_Email").val().trim() == "")
  {
  return "Insert valid Email.";
  }
-//NIC
+//Hospital_ID
 if ($("#Hospital_ID").val().trim() == "")
  {
  return "Insert Hospital ID.";
