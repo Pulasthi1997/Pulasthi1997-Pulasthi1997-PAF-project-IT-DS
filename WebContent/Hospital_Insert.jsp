@@ -50,16 +50,18 @@
 	<form id="formHospital" name="formHospital" method="post" action="Hospital_Insert.jsp">
 		Hospital Name: 
 		<input id="H_name" name="H_name" type="text"
-			class="form-control form-control-sm"> <br>
+			class="form-control form-control-sm" required> <br>
 	    Contact No:
-	     <input id="H_contactNumber" name="H_contactNumber" type="text"
-			class="form-control form-control-sm"> <br> 
+	     <input id="H_contactNumber" name="H_contactNumber" type="text" placeholder="7xxxxxxxx" maxlength="9"
+			 pattern="^\d{9}$" class="form-control form-control-sm"required > <br> 
+			
+			
 		Address: 
 		<input id="H_address" name="H_address" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm" required> <br> 
 		E-mail:
 		 <input id="H_email" name="H_email" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm" required> <br> 
 		<input id="btnSave" name="btnSave" type="submit" value="Save"
 			class="btn btn-primary"> 
 		<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">

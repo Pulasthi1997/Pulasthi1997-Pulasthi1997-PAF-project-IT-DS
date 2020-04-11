@@ -57,22 +57,23 @@
 
 	<form id="formDoctor" name="formDoctor" method="post" action="Doctor_Insert.jsp">
 		Doctor name: <input id="D_Name" name="D_Name" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm" required> <br> 
 			
 		Doctor Type: <input id="D_Type" name="D_Type" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm" required> <br> 
 			
 		Contact	Number: <input id="D_Contact_Number" name="D_Contact_Number"
-			type="text" class="form-control form-control-sm"> <br>
+			type="text"   placeholder="7xxxxxxxx" maxlength="9"
+			 pattern="^\d{9}$"  class="form-control form-control-sm" required> <br>
 			
 		Address: <input id="D_Address" name="D_Address" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm" required> <br> 
 			
 		Email: <input id="D_Email" name="D_Email" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm" required> <br> 
 			
 		Hospital ID: <input	id="Hospital_ID" name="Hospital_ID" type="text"
-			class="form-control form-control-sm"> <br> 
+			class="form-control form-control-sm"required> <br> 
 			
 			<input id="btnSave" name="btnSave" type="submit" value="Save" class="btn btn-primary"> 
 			
