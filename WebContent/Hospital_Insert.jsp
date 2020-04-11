@@ -54,13 +54,11 @@
 	    Contact No:
 	     <input id="H_contactNumber" name="H_contactNumber" type="text" placeholder="0xxxxxxxxx" maxlength="10"
 			 pattern="^\d{10}$" class="form-control form-control-sm"required > <br> 
-			
-			
 		Address: 
 		<input id="H_address" name="H_address" type="text"
 			class="form-control form-control-sm" required> <br> 
 		E-mail:
-		 <input id="H_email" name="H_email" type="text"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+		 <input id="H_email" name="H_email" type="text"  
 			class="form-control form-control-sm" required> <br> 
 		<input id="btnSave" name="btnSave" type="submit" value="Save" 
 			class="btn btn-primary"  > 
@@ -78,6 +76,9 @@
 	 Hospital h1= new Hospital();
 	out.print(h1.readHospital());
 	%>
+		<script language="javascript">
+
+
 		
 </body>
 </html>
