@@ -101,8 +101,7 @@ public class Doctor { // A common method to connect to the DB
 		return output;
 	}
 
-	public String updateDoctors(String ID, String dname, String dtype, String contact, String address, String email,
-			String nic) {
+	public String updateDoctors(String ID, String dname, String dtype, String contact, String address, String email, String nic) {
 		String output = "";
 		try {
 			Connection con = connect();
