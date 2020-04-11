@@ -64,14 +64,14 @@
 			class="btn btn-primary"> 
 		<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
 	</form>
-	
+
 	<div id"alertSuccess" class="alert alert-success">
 		<%
-		out.print(session.getAttribute("statusMsg"));
+			out.print(session.getAttribute("statusMsg"));
 		%>
-		
-		</div>
-	
+
+	</div>
+
 	<%
 	 Hospital h1= new Hospital();
 	out.print(h1.readHospital());
