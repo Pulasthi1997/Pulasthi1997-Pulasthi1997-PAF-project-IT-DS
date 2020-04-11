@@ -37,15 +37,13 @@ public class Hospital {
 				String query = " insert into hospital(`H_name`,`H_contactNumber`,`H_address`,`H_email`)"
 						+ " values (?, ?, ?, ?)";
 				PreparedStatement preparedStmt = con.prepareStatement(query);
-				// binding values
-				//preparedStmt.setInt(1, );
+				
 				preparedStmt.setString(1, hName);
 				preparedStmt.setString(2, contactNo);
 				preparedStmt.setString(3, address);
 				preparedStmt.setString(4, email);
 
-				// execute the statement
-				//qwqw
+				
 				preparedStmt.execute();
 				con.close();
 				output = "Inserted successfully";
