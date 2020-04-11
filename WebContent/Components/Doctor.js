@@ -25,7 +25,8 @@ if (status != true)
 // If valid------------------------
  $("#formDoctor").submit();
 });
-// UPDATE==========================================
+
+// UPDATE===========================================
 $(document).on("click", ".btnUpdate", function(event)
 {
  $("#hidDoctorIDSave").val($(this).closest("tr").find('#hidDoctorIDUpdate').val());
@@ -36,6 +37,7 @@ $(document).on("click", ".btnUpdate", function(event)
  $("#D_Email").val($(this).closest("tr").find('td:eq(4)').text());
  $("#D_NIC").val($(this).closest("tr").find('td:eq(5)').text());
 });
+
 // CLIENTMODEL=========================================================================
 function validateDoctorForm()
 {
