@@ -158,5 +158,53 @@ public class Hospital {
 				System.err.println(e.getMessage());
 			}
 			return output;
-		}		
+		}
+		
+		
+		
+			
+		
+		
+		public String readHosDoc() {
+			String output = "";
+			try {
+				Connection con = connect();
+				if (con == null) {
+					return "Error while connecting to the database for reading.";
+				}
+				// Prepare the html table to be displayed
+				output = "<table border=\"1\"><tr><th> Hospital ID </th><th> Hospital Name </th></tr>";
+						
+	                                       
+
+						
+				String query = "select H_ID,H_Name from hospital";
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(query);
+				// iterate through the rows in the result set
+				while (rs.next()) {
+					String H_ID = Integer.toString(rs.getInt("H_ID"));
+					String H_name = rs.getString("H_name");
+					
+					
+					// Add into the html table
+					
+					 output+= "<tr><td>" + H_ID + "</td>";
+					 output+= "<td>" + H_name + "</td>"; 
+					
+					
+				}
+				con.close();
+				// Complete the html table
+				output += "</table>";
+			} catch (Exception e) {
+				output = "Error while reading the Hospitals.";
+				System.err.println(e.getMessage());
+			}
+			return output;
+		
+		
+		}
+
+
 }
