@@ -16,7 +16,7 @@
 						request.getParameter("D_Contact_Number"), 
 						request.getParameter("D_Address"), 
 						request.getParameter("D_Email"), 
-						request.getParameter("D_NIC"));
+						request.getParameter("Hospital_ID"));
 				
 			} else//Update----------------------
 			{
@@ -26,7 +26,7 @@
 								request.getParameter("D_Contact_Number"),
 								request.getParameter("D_Address"), 
 								request.getParameter("D_Email"), 
-								request.getParameter("D_NIC"));
+								request.getParameter("Hospital_ID"));
 			}
 			session.setAttribute("statusMsg", stsMsg);
 		}
@@ -71,7 +71,7 @@
 		Email: <input id="D_Email" name="D_Email" type="text"
 			class="form-control form-control-sm"> <br> 
 			
-		NIC: <input	id="D_NIC" name="D_NIC" type="text"
+		Hospital ID: <input	id="Hospital_ID" name="Hospital_ID" type="text"
 			class="form-control form-control-sm"> <br> 
 			
 			<input id="btnSave" name="btnSave" type="submit" value="Save" class="btn btn-primary"> 

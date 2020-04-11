@@ -29,10 +29,10 @@ public class DoctorService {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String insertDoctors(@FormParam("D_Name") String D_Name, @FormParam("D_Type") String D_Type,
 			@FormParam("D_Contact_Number") String D_Contact_Number, @FormParam("D_Address") String D_Address,
-			@FormParam("D_Email") String D_Email, @FormParam("D_NIC") String D_NIC)
+			@FormParam("D_Email") String D_Email, @FormParam("Hospital_ID") String Hospital_ID)
 
 	{
-		String output = d1.insertDoctors(D_Name, D_Type, D_Contact_Number, D_Address, D_Email, D_NIC);
+		String output = d1.insertDoctors(D_Name, D_Type, D_Contact_Number, D_Address, D_Email, Hospital_ID);
 		return output;
 	}
 
@@ -50,12 +50,12 @@ public class DoctorService {
 		String D_Contact_Number = d12.get("D_Contact_Number").getAsString();
 		String D_Address = d12.get("D_Address").getAsString();
 		String D_Email = d12.get("D_Email").getAsString();
-		String D_NIC = d12.get("D_NIC").getAsString();
+		String Hospital_ID = d12.get("Hospital_ID").getAsString();
 
 		// String output = d1.updateItem(Doctor_ID, D_Name,D_Type ,
-		// D_Contact_Number,D_Address,D_Email,D_NIC );
+		// D_Contact_Number,D_Address,D_Email,Hospital_ID );
 		// return output;
-		String output = d1.updateDoctors(Doctor_ID, D_Name, D_Type, D_Contact_Number, D_Address, D_Email, D_NIC);
+		String output = d1.updateDoctors(Doctor_ID, D_Name, D_Type, D_Contact_Number, D_Address, D_Email, Hospital_ID);
 		return output;
 	}
 
