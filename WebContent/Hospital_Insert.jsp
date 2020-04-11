@@ -60,7 +60,7 @@
 		<input id="H_address" name="H_address" type="text"
 			class="form-control form-control-sm" required> <br> 
 		E-mail:
-		 <input id="H_email" name="H_email" type="text"
+		 <input id="H_email" name="H_email" type="text"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
 			class="form-control form-control-sm" required> <br> 
 		<input id="btnSave" name="btnSave" type="submit" value="Save" 
 			class="btn btn-primary"  > 
