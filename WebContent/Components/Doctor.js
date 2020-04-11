@@ -35,7 +35,7 @@ $(document).on("click", ".btnUpdate", function(event)
  $("#D_Contact_Number").val($(this).closest("tr").find('td:eq(2)').text());
  $("#D_Address").val($(this).closest("tr").find('td:eq(3)').text());
  $("#D_Email").val($(this).closest("tr").find('td:eq(4)').text());
- $("#D_NIC").val($(this).closest("tr").find('td:eq(5)').text());
+ $("#Hospital_ID").val($(this).closest("tr").find('td:eq(5)').text());
 });
 
 // CLIENTMODEL=========================================================================
@@ -67,9 +67,9 @@ if ($("#D_Email").val().trim() == "")
  return "Insert valid Email.";
  }
 //NIC
-if ($("#D_NIC").val().trim() == "")
+if ($("#Hospital_ID").val().trim() == "")
  {
- return "Insert NIC.";
+ return "Insert Hospital ID.";
  }
 
 

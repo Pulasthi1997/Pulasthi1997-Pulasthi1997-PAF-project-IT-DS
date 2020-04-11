@@ -17,6 +17,7 @@ public class Hospital {
          //Connection//good
 		 //Provide the correct details: DBServer/DBName, username, password
 		 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_project?useTimezone=true&serverTimezone=UTC", "root", "");
+		 
 		 }
 		 catch (Exception e)
 		 {
@@ -43,7 +44,7 @@ public class Hospital {
 				preparedStmt.setString(3, address);
 				preparedStmt.setString(4, email);
 
-				
+			
 				preparedStmt.execute();
 				con.close();
 				output = "Inserted successfully";
@@ -91,7 +92,7 @@ public class Hospital {
 					output += "<td>" + H_email + "</td>";
 					
 					// buttons
-					output += "<tr><td><input name=\"btnUpdate\" type=\"submit\"value=\"Update\" class=\"btn btn-secondary\"></td>"
+					output += "<td><input name=\"btnUpdate\" type=\"submit\"value=\"Update\" class=\"btn btn-secondary btnUpdate\"></td>"
 							+ "<td><form method=\"post\" action=\"Hospital_Insert.jsp\">"
 							+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
 							+ "<input name=\"hidHospitalIDDelete\" type=\"hidden\" value=\"" + H_ID + "\">" + "</form></td></tr>";
