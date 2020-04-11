@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 	<%@ page import="com.DoctorService" %>
 	<%@ page import="model.Doctor" %>
+	<%@ page import="model.Hospital" %>
 	<% 
 		//Save---------------------------------
 		if (request.getParameter("D_Name") != null) {
@@ -94,5 +95,18 @@
 	     Doctor d1=new Doctor();
 	     out.print(d1.readDoctors());
 	     %>
+	     
+	     
+	     <br><br>
+	     
+	     
+	     <%
+	 Hospital h11= new Hospital();
+	out.print(h11.readHosDoc());
+	%>
+	     
+	     
+	     
+	     
 </body>
 </html>

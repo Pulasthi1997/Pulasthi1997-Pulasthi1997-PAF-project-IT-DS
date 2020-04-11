@@ -82,8 +82,7 @@ public class Doctor { // A common method to connect to the DB
 				String Hospital_ID = rs.getString("Hospital_ID");
 
 				//Add into the html table
-				output += "<tr><td><input id=\"hidDoctorIDUpdate\"name=\"hidDoctorIDUpdate\"type=\"hidden\" value=\"" + Doctor_ID + "\">"
-                                               + D_Name + "</td>";
+				output += "<tr><td><input id=\"hidDoctorIDUpdate\"name=\"hidDoctorIDUpdate\"type=\"hidden\" value=\"" + Doctor_ID + "\">" + D_Name + "</td>";    
 				output += "<td>" + D_Type + "</td>";
 				output += "<td>" + D_Contact_Number + "</td>";
 				output += "<td>" + D_Address + "</td>";
