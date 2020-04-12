@@ -2,28 +2,17 @@ package model;
 
 import java.sql.*;
 
+import database.dbconnect;
+
 public class Doctor { // A common method to connect to the DB
 
-	private Connection connect() {
-		Connection con = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-
-			// Provide the correct details: DBServer/DBName, username, password
-			con = DriverManager.getConnection(
-					"jdbc:mysql://127.0.0.1:3306/paf_project?useTimezone=true&serverTimezone=UTC", "root", "");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return con;
-	}
-	
+	dbconnect obj=new dbconnect();
 
 	public String insertDoctors(String dname, String dtype, String contact, String address, String email, String hospitalID) {
 		String output = "";
 		
 		try {
-			Connection con = connect();
+			Connection con = obj.connect();
 			if (con == null) {
 				return "Error while connecting to the database for inserting..";
 			}
@@ -60,7 +49,7 @@ public class Doctor { // A common method to connect to the DB
 	public String readDoctors() {
 		String output = "";
 		try {
-			Connection con = connect();
+			Connection con =obj.connect();
 			if (con == null) {
 				return "Error while connecting to the database for reading.";
 			}
@@ -107,7 +96,7 @@ public class Doctor { // A common method to connect to the DB
 	public String updateDoctors(String ID, String dname, String dtype, String contact, String address, String email, String hospitalID) {
 		String output = "";
 		try {
-			Connection con = connect();
+			Connection con = obj.connect();
 			if (con == null) {
 				return "Error while connecting to the database for updating.";
 			}
@@ -139,7 +128,7 @@ public class Doctor { // A common method to connect to the DB
 	public String deleteDoctor(String Doctor_ID) {
 		String output = "";
 		try {
-			Connection con = connect();
+			Connection con = obj.connect();
 			if (con == null) {
 				return "Error while connecting to the database for deleting.";
 			}
