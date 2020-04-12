@@ -118,7 +118,7 @@ public class Doctor { // A common method to connect to the DB
 			con.close();
 			output = "Updated successfully done";
 		} catch (Exception e) {
-			output = "Error while updating the item.";
+			output = "Error while updating the items.";
 			System.err.println(e.getMessage());
 		}
 		return output;
