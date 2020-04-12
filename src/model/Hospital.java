@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Connection;
+import database.dbconnect;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,29 +9,13 @@ import java.sql.Statement;
 
 public class Hospital {
      //A common method to connect to the DB
-		private Connection connect()
-		 {
-		 Connection con = null;
-		 try
-		 {
-		 Class.forName("com.mysql.cj.jdbc.Driver");
-         //Connection//good
-		 //Provide the correct details: DBServer/DBName, username, password
-		 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/paf_project?useTimezone=true&serverTimezone=UTC", "root", "");
-		 
-		 }
-		 catch (Exception e)
-		 {
-			 System.out.println("errrrror - "+e);
-			 e.printStackTrace();}
-		 return con;
-		 } 
+		dbconnect obj=new dbconnect();
 		
 		public String insertHospital(String hName, String contactNo, String address, String email) {
 			
 			String output = "";
 			try {
-				Connection con = connect();
+				Connection con = obj.connect();
 				if (con == null) {
 					return "Error while connecting to the database for inserting.";
 				}
@@ -60,7 +45,7 @@ public class Hospital {
 		public String readHospital() {
 			String output = "";
 			try {
-				Connection con = connect();
+				Connection con = obj.connect();
 				if (con == null) {
 					return "Error while connecting to the database for reading.";
 				}
@@ -112,7 +97,7 @@ public class Hospital {
 			System.out.println("Update method...............................................................................");
 			String output = "";
 			try {
-				Connection con = connect();
+				Connection con = obj.connect();
 				if (con == null) {
 					return "Error while connecting to the database for updating.";
 				}
@@ -140,7 +125,7 @@ public class Hospital {
 		public String deleteHospital(String H_ID) {
 			String output = "";
 			try {
-				Connection con = connect();
+				Connection con = obj.connect();
 				if (con == null) {
 					return "Error while connecting to the database for deleting.";
 				}
@@ -168,7 +153,7 @@ public class Hospital {
 		public String readHosDoc() {
 			String output = "";
 			try {
-				Connection con = connect();
+				Connection con = obj.connect();
 				if (con == null) {
 					return "Error while connecting to the database for reading.";
 				}
