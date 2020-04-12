@@ -6,7 +6,7 @@ import database.dbconnect;
 
 public class Doctor { // A common method to connect to the DB
 
-	dbconnect obj=new dbconnect();
+	dbconnect obj= new dbconnect();
 
 	public String insertDoctors(String dname, String dtype, String contact, String address, String email, String hospitalID) {
 		String output = "";
@@ -21,7 +21,7 @@ public class Doctor { // A common method to connect to the DB
 					+ " values ( ?, ?, ?,?,?,?)";
 	
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-// binding values
+// binding valuesss
 			
 			preparedStmt.setString(1, dname);
 			preparedStmt.setString(2, dtype);
@@ -49,7 +49,7 @@ public class Doctor { // A common method to connect to the DB
 	public String readDoctors() {
 		String output = "";
 		try {
-			Connection con =obj.connect();
+			Connection con = obj.connect();
 			if (con == null) {
 				return "Error while connecting to the database for reading.";
 			}

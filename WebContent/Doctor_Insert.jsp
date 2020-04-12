@@ -19,7 +19,7 @@
 						request.getParameter("D_Email"), 
 						request.getParameter("Hospital_ID"));
 				
-			} else//Update----------------------
+			} else//Update--------------------------
 			{
 				stsMsg = d1.updateDoctors(request.getParameter("hidDoctorIDSave"),
 								request.getParameter("D_Name"),
@@ -31,7 +31,7 @@
 			}
 			session.setAttribute("statusMsg", stsMsg);
 		}
-		//Delete-------------------------------------------
+		//Delete---------------------------------------------
 		if (request.getParameter("hidDoctorIDDelete") != null) {
 			Doctor
 			d1 = new Doctor();
@@ -97,7 +97,7 @@
 	     %>
 	     
 	     
-	     <br><br>
+	     <br><br><br>
 	     
 	     
 	     <%
@@ -106,7 +106,7 @@
 	%>
 	     
 	     
-	     
+	   <br><br><br>  
 	     
 </body>
 </html>

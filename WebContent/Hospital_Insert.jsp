@@ -25,7 +25,7 @@
 		}
 		session.setAttribute("statusMsg", stsMsg);
 	}
-	//Delete-----------------------------
+	//Delete--------------------------------
 	if (request.getParameter("hidHospitalIDDelete") != null) {
 		Hospital
 		Hospital_1 = new Hospital();
